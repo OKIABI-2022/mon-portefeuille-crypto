@@ -2,10 +2,10 @@ import streamlit as st
 import requests
 
 # 1. Configuration de la page
-st.set_page_config(page_title="Mon Portefeuille Pro", page_icon="💼", layout="wide")
+st.set_page_config(page_title="OKIABRI Portefeuille", page_icon="💼", layout="wide")
 
-st.title("💼 Mon Portefeuille Crypto Pro (En Direct !)")
-st.write("Bienvenue sur votre tableau de bord financier connecté au marché mondial.")
+st.title("💼 Mon Portefeuille Crypto Pro")
+st.write("Bienvenue sur votre portefeuille.")
 st.divider()
 
 # --- FONCTIONS DE DONNÉES ---
