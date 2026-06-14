@@ -2,9 +2,9 @@ import streamlit as st
 import requests
 
 # 1. Configuration de la page
-st.set_page_config(page_title="OKIABRI Portefeuille", page_icon="💼", layout="wide")
+st.set_page_config(page_title="OKIABRI", page_icon="💼", layout="wide")
 
-st.title("💼 Mon Portefeuille Crypto Pro")
+st.title("💼 Okiabri Portefeuille Crypto ")
 st.write("Bienvenue sur votre portefeuille.")
 st.divider()
 
@@ -53,6 +53,7 @@ st.sidebar.header("🛠️ Gérer mon portefeuille")
 
 with st.sidebar.form("formulaire_ajout"):
     st.subheader("Ajouter ou Modifier")
+    st.subheader("Supprimer un projet")
     nouveau_nom = st.text_input("Nom du projet :").capitalize()
     nouveau_pourcentage = st.number_input("Pourcentage (%) :", min_value=0.0, max_value=100.0, step=0.1)
     bouton_ajouter = st.form_submit_button("Enregistrer le projet")
