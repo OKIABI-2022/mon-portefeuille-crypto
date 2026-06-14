@@ -65,6 +65,34 @@ with st.sidebar.form("formulaire_ajout"):
         else:
             st.error("Erreur : Le nom ne peut pas être vide.")
 
+# --- SECTION SUPPRESSION (À placer dans la barre latérale) ---
+st.sidebar.divider() # On ajoute une ligne visuelle pour séparer l'ajout de la suppression
+st.sidebar.subheader("🗑️ Supprimer un projet")
+
+# On vérifie d'abord que le portefeuille n'est pas vide (on ne peut pas supprimer le vide !)
+if len(portefeuille) > 0:
+    
+    # On crée un nouveau formulaire dédié à la suppression
+    with st.sidebar.form("formulaire_suppression"):
+        
+        # st.selectbox crée un menu déroulant. Ses 'options' sont les clés (noms) de notre dictionnaire
+        projet_a_supprimer = st.selectbox("Choisissez le projet à retirer :", options=list(portefeuille.keys()))
+        
+        # Le bouton pour valider l'action
+        bouton_supprimer = st.form_submit_button("Supprimer définitivement")
+        
+        # Si on clique sur le bouton...
+        if bouton_supprimer:
+            # 1. On utilise le mot-clé 'del' pour l'effacer de la mémoire
+            del portefeuille[projet_a_supprimer]
+            
+            # 2. On écrase l'ancien fichier texte par le nouveau dictionnaire sans ce projet
+            sauvegarder_donnees(portefeuille)
+            
+            # 3. On rafraîchit la page instantanément
+            st.rerun()
+            
+
 # --- AFFICHAGE PRINCIPAL (AVEC API LIVE) ---
 st.subheader("📊 Valorisation en Temps Réel")
 capital = st.number_input("Entrez votre capital total ($) :", min_value=0.0, value=1000.0)
