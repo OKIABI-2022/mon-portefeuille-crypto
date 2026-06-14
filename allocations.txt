@@ -1,0 +1,10 @@
+Bitcoin:25.0
+Ethereum:15.0
+Solana:6.36
+Sui:9.5
+Tao:5.0
+Ika:4.1
+Render:0.0
+Arweave:10.0
+Hyperlyquid:0.0
+Hype:5.0
