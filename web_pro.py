@@ -52,7 +52,7 @@ portefeuille = lire_donnees()
 st.sidebar.header("🛠️ Gérer mon portefeuille")
 
 with st.sidebar.form("formulaire_ajout"):
-    st.subheader("Ajouter ou Supprimer")
+    st.subheader("Ajouter ou Modifier")
     nouveau_nom = st.text_input("Nom du projet :").capitalize()
     nouveau_pourcentage = st.number_input("Pourcentage (%) :", min_value=0.0, max_value=100.0, step=0.1)
     bouton_ajouter = st.form_submit_button("Enregistrer le projet")
@@ -80,7 +80,7 @@ else:
         st.error("Erreur réseau : Impossible de joindre CoinGecko. Revenez plus tard.")
     
     # Création des colonnes pour les cartes
-    colonnes = st.columns(3)
+    colonnes = st.columns(5)
     index = 0
     
     for projet, pourcentage in portefeuille.items():
