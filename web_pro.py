@@ -80,7 +80,7 @@ else:
         st.error("Erreur réseau : Impossible de joindre CoinGecko. Revenez plus tard.")
     
     # Création des colonnes pour les cartes
-    colonnes = st.columns(2)
+    colonnes = st.columns(3)
     index = 0
     
     for projet, pourcentage in portefeuille.items():
